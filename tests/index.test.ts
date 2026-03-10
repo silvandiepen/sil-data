@@ -7,6 +7,8 @@ import {
   states,
   continents,
   currencies,
+  countryGeography,
+  flagData,
   // Helper functions
   getCountryByCode,
   getCountriesByContinent,
@@ -23,6 +25,27 @@ import {
   getContinentByCode,
   getCurrencyByCode,
   getCurrencyByCountry,
+  // Geography helpers
+  getCountryGeography,
+  getLandlockedCountries,
+  getCountriesByClimate,
+  getNeighbors,
+  // Flag helpers
+  getFlagData,
+  getFlagsByColor,
+  getSimilarFlags,
+  getFlagSvgUrl,
+  getFlagPngUrl,
+  // Geo utilities
+  haversineDistance,
+  bearing,
+  bearingToCardinal,
+  getDistanceBetweenCountries,
+  getDirectionBetweenCountries,
+  compareTemperature,
+  compareSize,
+  getHemisphere,
+  getGeoHints,
 } from "../src/index.js";
 
 describe("countries", () => {
@@ -435,5 +458,392 @@ describe("getCurrencyByCountry", () => {
 
     const deCurrency = getCurrencyByCountry("DE");
     expect(deCurrency?.code).toBe("EUR");
+  });
+});
+
+// ── Geography data ──────────────────────────────────────────────────────────
+
+describe("countryGeography", () => {
+  it("should have geography data for all major countries", () => {
+    const codes = countryGeography.map((g) => g.alpha2);
+    expect(codes).toContain("US");
+    expect(codes).toContain("DE");
+    expect(codes).toContain("JP");
+    expect(codes).toContain("CN");
+    expect(codes).toContain("BR");
+    expect(codes).toContain("AU");
+  });
+
+  it("should have at least 150 entries", () => {
+    expect(countryGeography.length).toBeGreaterThan(150);
+  });
+
+  it("should have valid centroid coordinates", () => {
+    for (const g of countryGeography) {
+      expect(g.lat).toBeGreaterThanOrEqual(-90);
+      expect(g.lat).toBeLessThanOrEqual(90);
+      expect(g.lon).toBeGreaterThanOrEqual(-180);
+      expect(g.lon).toBeLessThanOrEqual(180);
+    }
+  });
+
+  it("should have positive area for all countries (except very tiny city-states)", () => {
+    for (const g of countryGeography) {
+      expect(g.area).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  it("should have valid bounding boxes", () => {
+    for (const g of countryGeography) {
+      expect(g.bounds.north).toBeGreaterThan(g.bounds.south);
+      expect(g.bounds.north).toBeLessThanOrEqual(90);
+      expect(g.bounds.south).toBeGreaterThanOrEqual(-90);
+    }
+  });
+
+  it("should have climate zone and average temperature", () => {
+    const validClimates = [
+      "tropical", "subtropical", "arid", "mediterranean",
+      "temperate", "continental", "subarctic", "arctic",
+    ];
+    for (const g of countryGeography) {
+      expect(validClimates).toContain(g.climate);
+      expect(typeof g.avgTemperature).toBe("number");
+    }
+  });
+});
+
+describe("getCountryGeography", () => {
+  it("should return geometry for a valid code", () => {
+    const us = getCountryGeography("US");
+    expect(us).toBeDefined();
+    expect(us?.alpha2).toBe("US");
+    expect(us?.landlocked).toBe(false);
+    expect(us?.climate).toBe("temperate");
+  });
+
+  it("should be case-insensitive", () => {
+    expect(getCountryGeography("us")).toEqual(getCountryGeography("US"));
+  });
+
+  it("should return undefined for unknown code", () => {
+    expect(getCountryGeography("XX")).toBeUndefined();
+  });
+});
+
+describe("getLandlockedCountries", () => {
+  it("should return only landlocked countries", () => {
+    const landlocked = getLandlockedCountries();
+    expect(landlocked.every((g) => g.landlocked)).toBe(true);
+  });
+
+  it("should include known landlocked countries", () => {
+    const codes = getLandlockedCountries().map((g) => g.alpha2);
+    expect(codes).toContain("CH"); // Switzerland
+    expect(codes).toContain("AT"); // Austria
+    expect(codes).toContain("BO"); // Bolivia
+    expect(codes).toContain("MN"); // Mongolia
+    expect(codes).toContain("ZM"); // Zambia
+  });
+
+  it("should not include coastal countries", () => {
+    const codes = getLandlockedCountries().map((g) => g.alpha2);
+    expect(codes).not.toContain("US");
+    expect(codes).not.toContain("GB");
+    expect(codes).not.toContain("JP");
+  });
+});
+
+describe("getCountriesByClimate", () => {
+  it("should return tropical countries", () => {
+    const tropical = getCountriesByClimate("tropical");
+    expect(tropical.every((g) => g.climate === "tropical")).toBe(true);
+    const codes = tropical.map((g) => g.alpha2);
+    expect(codes).toContain("BR");
+    expect(codes).toContain("NG");
+    expect(codes).toContain("TH");
+  });
+
+  it("should return subarctic countries", () => {
+    const subarctic = getCountriesByClimate("subarctic");
+    const codes = subarctic.map((g) => g.alpha2);
+    expect(codes).toContain("RU");
+    expect(codes).toContain("NO");
+    expect(codes).toContain("FI");
+  });
+});
+
+describe("getNeighbors", () => {
+  it("should return Germany's neighbours", () => {
+    const neighbours = getNeighbors("DE");
+    const codes = neighbours.map((g) => g.alpha2);
+    expect(codes).toContain("FR");
+    expect(codes).toContain("NL");
+    expect(codes).toContain("CH");
+    expect(codes).toContain("AT");
+    expect(codes).toContain("PL");
+  });
+
+  it("should return an empty array for island countries with no neighbours", () => {
+    const neighbours = getNeighbors("JP");
+    expect(neighbours).toEqual([]);
+  });
+
+  it("should return empty array for unknown code", () => {
+    expect(getNeighbors("XX")).toEqual([]);
+  });
+});
+
+// ── Flag data ───────────────────────────────────────────────────────────────
+
+describe("flagData", () => {
+  it("should have flag data for major countries", () => {
+    const codes = flagData.map((f) => f.alpha2);
+    expect(codes).toContain("US");
+    expect(codes).toContain("DE");
+    expect(codes).toContain("JP");
+    expect(codes).toContain("GB");
+    expect(codes).toContain("FR");
+  });
+
+  it("should have at least 150 entries", () => {
+    expect(flagData.length).toBeGreaterThan(150);
+  });
+
+  it("should have valid SVG and PNG URLs", () => {
+    for (const f of flagData) {
+      expect(f.svgUrl).toMatch(/^https:\/\/flagcdn\.com\/[a-z]{2,3}\.svg$/);
+      expect(f.pngUrl).toMatch(/^https:\/\/flagcdn\.com\/w320\/[a-z]{2,3}\.png$/);
+    }
+  });
+
+  it("should have at least one colour per flag", () => {
+    for (const f of flagData) {
+      expect(f.colors.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe("getFlagData", () => {
+  it("should return flag info for a valid code", () => {
+    const nl = getFlagData("NL");
+    expect(nl?.alpha2).toBe("NL");
+    expect(nl?.colors).toContain("red");
+    expect(nl?.colors).toContain("white");
+    expect(nl?.colors).toContain("blue");
+  });
+
+  it("should be case-insensitive", () => {
+    expect(getFlagData("nl")).toEqual(getFlagData("NL"));
+  });
+
+  it("should return undefined for unknown code", () => {
+    expect(getFlagData("XX")).toBeUndefined();
+  });
+});
+
+describe("getFlagsByColor", () => {
+  it("should return flags that include red", () => {
+    const redFlags = getFlagsByColor("red");
+    expect(redFlags.length).toBeGreaterThan(50);
+    expect(redFlags.every((f) => f.colors.includes("red"))).toBe(true);
+  });
+});
+
+describe("getSimilarFlags", () => {
+  it("should return visually similar flags for the Netherlands", () => {
+    const similar = getSimilarFlags("NL");
+    const codes = similar.map((f) => f.alpha2);
+    expect(codes).toContain("LU"); // Luxembourg
+    expect(codes).toContain("FR"); // France (vertical variant)
+    expect(codes).toContain("RU"); // Russia
+  });
+
+  it("should return Nordic cross siblings for Denmark", () => {
+    const similar = getSimilarFlags("DK");
+    const codes = similar.map((f) => f.alpha2);
+    expect(codes).toContain("NO");
+    expect(codes).toContain("SE");
+    expect(codes).toContain("FI");
+    expect(codes).toContain("IS");
+  });
+
+  it("should return Union Jack family for Australia", () => {
+    const similar = getSimilarFlags("AU");
+    const codes = similar.map((f) => f.alpha2);
+    expect(codes).toContain("NZ");
+    expect(codes).toContain("GB");
+  });
+
+  it("should return empty array for unknown code", () => {
+    expect(getSimilarFlags("XX")).toEqual([]);
+  });
+});
+
+describe("getFlagSvgUrl / getFlagPngUrl", () => {
+  it("should generate correct SVG URL", () => {
+    expect(getFlagSvgUrl("US")).toBe("https://flagcdn.com/us.svg");
+    expect(getFlagSvgUrl("GB")).toBe("https://flagcdn.com/gb.svg");
+  });
+
+  it("should be case-insensitive", () => {
+    expect(getFlagSvgUrl("us")).toBe("https://flagcdn.com/us.svg");
+  });
+
+  it("should generate correct PNG URL with default width", () => {
+    expect(getFlagPngUrl("US")).toBe("https://flagcdn.com/w320/us.png");
+  });
+
+  it("should generate PNG URL with custom width", () => {
+    expect(getFlagPngUrl("US", 640)).toBe("https://flagcdn.com/w640/us.png");
+  });
+});
+
+// ── Geo utilities ───────────────────────────────────────────────────────────
+
+describe("haversineDistance", () => {
+  it("should return ~0 for same point", () => {
+    expect(haversineDistance(0, 0, 0, 0)).toBe(0);
+  });
+
+  it("should return ~111 km per degree of latitude", () => {
+    const d = haversineDistance(0, 0, 1, 0);
+    expect(d).toBeCloseTo(111.19, 0);
+  });
+
+  it("should compute London–Paris distance (~344 km)", () => {
+    const d = haversineDistance(51.51, -0.13, 48.86, 2.35);
+    expect(d).toBeGreaterThan(300);
+    expect(d).toBeLessThan(400);
+  });
+});
+
+describe("bearing / bearingToCardinal", () => {
+  it("should return 0° (north) for due north", () => {
+    expect(bearing(0, 0, 1, 0)).toBeCloseTo(0, 0);
+  });
+
+  it("should return 90° (east) for due east", () => {
+    expect(bearing(0, 0, 0, 1)).toBeCloseTo(90, 0);
+  });
+
+  it("bearingToCardinal should convert angles correctly", () => {
+    expect(bearingToCardinal(0)).toBe("N");
+    expect(bearingToCardinal(90)).toBe("E");
+    expect(bearingToCardinal(180)).toBe("S");
+    expect(bearingToCardinal(270)).toBe("W");
+    expect(bearingToCardinal(45)).toBe("NE");
+    expect(bearingToCardinal(135)).toBe("SE");
+  });
+});
+
+describe("getDistanceBetweenCountries", () => {
+  it("should return a positive number between two countries", () => {
+    const d = getDistanceBetweenCountries("DE", "FR");
+    expect(d).not.toBeNull();
+    expect(d!).toBeGreaterThan(0);
+  });
+
+  it("should return 0 for the same country", () => {
+    expect(getDistanceBetweenCountries("US", "US")).toBe(0);
+  });
+
+  it("should return null for unknown codes", () => {
+    expect(getDistanceBetweenCountries("XX", "DE")).toBeNull();
+    expect(getDistanceBetweenCountries("DE", "XX")).toBeNull();
+  });
+});
+
+describe("getDirectionBetweenCountries", () => {
+  it("should return direction from France to Germany (roughly E/NE)", () => {
+    const dir = getDirectionBetweenCountries("FR", "DE");
+    expect(["E", "NE"]).toContain(dir);
+  });
+
+  it("should return direction from US to UK (roughly E/NE)", () => {
+    const dir = getDirectionBetweenCountries("US", "GB");
+    expect(["NE", "E", "N"]).toContain(dir);
+  });
+
+  it("should return null for unknown codes", () => {
+    expect(getDirectionBetweenCountries("XX", "DE")).toBeNull();
+  });
+});
+
+describe("compareTemperature", () => {
+  it("should detect when target is hotter", () => {
+    // Brazil (tropical, ~24°C) vs Canada (continental, ~-5°C)
+    const result = compareTemperature("CA", "BR");
+    expect(result).toBe("hotter");
+  });
+
+  it("should detect when target is colder", () => {
+    const result = compareTemperature("BR", "CA");
+    expect(result).toBe("colder");
+  });
+
+  it("should return similar for close temperatures", () => {
+    // France and Germany are both temperate
+    const result = compareTemperature("FR", "DE");
+    expect(result).toBe("similar");
+  });
+
+  it("should return null for unknown code", () => {
+    expect(compareTemperature("XX", "DE")).toBeNull();
+  });
+});
+
+describe("compareSize", () => {
+  it("should return larger when target is much bigger", () => {
+    // Russia is much larger than Netherlands
+    const result = compareSize("NL", "RU");
+    expect(result).toBe("larger");
+  });
+
+  it("should return smaller when target is much smaller", () => {
+    const result = compareSize("RU", "NL");
+    expect(result).toBe("smaller");
+  });
+
+  it("should return null for unknown code", () => {
+    expect(compareSize("XX", "DE")).toBeNull();
+  });
+});
+
+describe("getHemisphere", () => {
+  it("should return Northern/Eastern for Germany", () => {
+    const h = getHemisphere("DE");
+    expect(h?.ns).toBe("Northern");
+    expect(h?.ew).toBe("Eastern");
+  });
+
+  it("should return Southern/Western for Argentina", () => {
+    const h = getHemisphere("AR");
+    expect(h?.ns).toBe("Southern");
+    expect(h?.ew).toBe("Western");
+  });
+
+  it("should return null for unknown code", () => {
+    expect(getHemisphere("XX")).toBeNull();
+  });
+});
+
+describe("getGeoHints", () => {
+  it("should return a complete hint object", () => {
+    const hints = getGeoHints("NL", "DE");
+    expect(hints).not.toBeNull();
+    expect(typeof hints!.distanceKm).toBe("number");
+    expect(hints!.distanceKm).toBeGreaterThan(0);
+    expect(["N","NE","E","SE","S","SW","W","NW"]).toContain(hints!.direction);
+    expect(["hotter","colder","similar"]).toContain(hints!.temperature);
+    expect(["larger","smaller","similar"]).toContain(hints!.size);
+    expect(hints!.hemisphere).toBeDefined();
+    expect(typeof hints!.landlocked).toBe("boolean");
+    expect(hints!.climate).toBeDefined();
+  });
+
+  it("should return null for unknown codes", () => {
+    expect(getGeoHints("XX", "DE")).toBeNull();
+    expect(getGeoHints("DE", "XX")).toBeNull();
   });
 });

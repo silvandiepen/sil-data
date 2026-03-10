@@ -134,3 +134,97 @@ export interface Currency {
   /** Countries using this currency (alpha-2 codes) */
   countries: string[];
 }
+
+/**
+ * Climate zones based on the Köppen climate classification (simplified).
+ */
+export type ClimateZone =
+  | "tropical"
+  | "subtropical"
+  | "arid"
+  | "mediterranean"
+  | "temperate"
+  | "continental"
+  | "subarctic"
+  | "arctic";
+
+/**
+ * Geographic bounding box of a country.
+ */
+export interface CountryBounds {
+  /** Northernmost latitude */
+  north: number;
+  /** Southernmost latitude */
+  south: number;
+  /** Easternmost longitude */
+  east: number;
+  /** Westernmost longitude */
+  west: number;
+}
+
+/**
+ * Geographic and climate data for a country, useful for geography games.
+ */
+export interface CountryGeography {
+  /** ISO 3166-1 alpha-2 code */
+  alpha2: string;
+  /** Centroid latitude of the country */
+  lat: number;
+  /** Centroid longitude of the country */
+  lon: number;
+  /** Approximate bounding box */
+  bounds: CountryBounds;
+  /** Land area in km² */
+  area: number;
+  /** Whether the country is landlocked (has no coastline) */
+  landlocked: boolean;
+  /** Neighboring country alpha-2 codes */
+  neighbors: string[];
+  /** Primary climate zone */
+  climate: ClimateZone;
+  /** Average annual temperature in Celsius */
+  avgTemperature: number;
+}
+
+/**
+ * Primary colors that can appear on a country flag.
+ */
+export type FlagColor =
+  | "red"
+  | "dark-red"
+  | "white"
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "black"
+  | "gold"
+  | "light-blue"
+  | "dark-blue"
+  | "dark-green"
+  | "purple"
+  | "brown";
+
+/**
+ * Flag metadata for a country, including visual similarity data for geography games.
+ */
+export interface FlagInfo {
+  /** ISO 3166-1 alpha-2 code */
+  alpha2: string;
+  /** URL to SVG flag image (via flagcdn.com) */
+  svgUrl: string;
+  /** URL to a 4×3 PNG flag image (via flagcdn.com) */
+  pngUrl: string;
+  /** Primary colors present on the flag (up to 4, most prominent first) */
+  colors: FlagColor[];
+  /**
+   * Alpha-2 codes of countries whose flags look visually similar.
+   * Useful for building "guess the flag" games with confusing options.
+   */
+  similar: string[];
+}
+
+/**
+ * 8-point cardinal / intercardinal compass directions.
+ */
+export type CardinalDirection = "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW";

@@ -26,6 +26,12 @@ export type {
   Continent,
   ContinentName,
   Currency,
+  CountryGeography,
+  CountryBounds,
+  ClimateZone,
+  FlagInfo,
+  FlagColor,
+  CardinalDirection,
 } from "./types/index.js";
 
 // Countries
@@ -69,3 +75,38 @@ export {
   getCurrencyByCode,
   getCurrencyByCountry,
 } from "./data/currencies.js";
+
+// Country geography (centroids, bounds, area, climate, neighbours)
+export {
+  countryGeography,
+  getCountryGeography,
+  getLandlockedCountries,
+  getCountriesByClimate,
+  getNeighbors,
+} from "./data/geography.js";
+
+// Flag metadata (SVG URLs, colours, similar flags)
+export {
+  flagData,
+  getFlagData,
+  getFlagsByColor,
+  getSimilarFlags,
+  getFlagSvgUrl,
+  getFlagPngUrl,
+  getCountryMapSvgUrl,
+} from "./data/flags.js";
+
+// Geo utilities for geography games
+export {
+  haversineDistance,
+  bearing,
+  bearingToCardinal,
+  getDistanceBetweenCountries,
+  getDirectionBetweenCountries,
+  compareTemperature,
+  compareSize,
+  getHemisphere,
+  getGeoHints,
+} from "./utils/geo.js";
+
+export type { GeoHint } from "./utils/geo.js";
