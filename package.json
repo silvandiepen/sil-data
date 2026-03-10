@@ -1,0 +1,55 @@
+{
+  "name": "@sil/data",
+  "version": "0.1.0",
+  "description": "A comprehensive collection of reusable world data: countries, phone codes, flags, cities, states, provinces and more",
+  "type": "module",
+  "main": "./dist/sil-data.cjs",
+  "module": "./dist/sil-data.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/sil-data.js",
+      "require": "./dist/sil-data.cjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist/types",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "countries",
+    "world-data",
+    "phone-codes",
+    "flags",
+    "cities",
+    "states",
+    "provinces",
+    "data",
+    "iso-3166"
+  ],
+  "author": "Sil van Diepen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silvandiepen/sil-data.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "vitest": "^1.0.0"
+  }
+}
