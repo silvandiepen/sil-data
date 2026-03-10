@@ -10,6 +10,10 @@ import type { CountryGeography } from "../types/index.js";
  *
  * Climate zone follows a simplified Köppen classification.
  * avgTemperature is approximate mean annual temperature in °C.
+ * @note The `neighbors` arrays use ISO 3166-1 alpha-2 codes, including
+ *   codes for disputed/special territories such as "EH" (Western Sahara)
+ *   and "XK" (Kosovo). These are included to accurately reflect shared land
+ *   borders, even where sovereignty is contested.
  */
 export const countryGeography: CountryGeography[] = [
   // ── Africa ──────────────────────────────────────────────────────────────

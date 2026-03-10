@@ -130,13 +130,23 @@ export function compareSize(
  *
  * e.g. `"Northern"` | `"Southern"` | `"Eastern"` | `"Western"`
  */
-export function getHemisphere(alpha2: string): { ns: "Northern" | "Southern"; ew: "Eastern" | "Western" } | null {
+export function getHemisphere(alpha2: string): Hemisphere | null {
   const geo = getCountryGeography(alpha2);
   if (!geo) return null;
   return {
     ns: geo.lat >= 0 ? "Northern" : "Southern",
     ew: geo.lon >= 0 ? "Eastern" : "Western",
   };
+}
+
+/**
+ * Hemisphere of a country: north/south and east/west of the prime meridian/equator.
+ */
+export interface Hemisphere {
+  /** "Northern" if centroid latitude ≥ 0, otherwise "Southern" */
+  ns: "Northern" | "Southern";
+  /** "Eastern" if centroid longitude ≥ 0, otherwise "Western" */
+  ew: "Eastern" | "Western";
 }
 
 /**
@@ -154,7 +164,7 @@ export interface GeoHint {
   /** Whether the target is larger, smaller, or similar in area */
   size: "larger" | "smaller" | "similar";
   /** Hemisphere of the target country */
-  hemisphere: { ns: "Northern" | "Southern"; ew: "Eastern" | "Western" };
+  hemisphere: Hemisphere;
   /** Whether the target is landlocked */
   landlocked: boolean;
   /** Climate zone of the target */

@@ -109,4 +109,4 @@ export {
   getGeoHints,
 } from "./utils/geo.js";
 
-export type { GeoHint } from "./utils/geo.js";
+export type { GeoHint, Hemisphere } from "./utils/geo.js";
