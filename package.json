@@ -1,6 +1,6 @@
 {
   "name": "@sil/data",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A comprehensive collection of reusable world data: countries, phone codes, flags, cities, states, provinces and more",
   "type": "module",
   "main": "./dist/sil-data.cjs",
