@@ -17,6 +17,7 @@ export const countries: Country[] = [
     currency: "AFN",
     languages: ["Dari", "Pashto"],
     tld: ".af",
+    recognized: true,
   },
   {
     name: "Albania",
@@ -30,6 +31,7 @@ export const countries: Country[] = [
     currency: "ALL",
     languages: ["Albanian"],
     tld: ".al",
+    recognized: true,
   },
   {
     name: "Algeria",
@@ -43,6 +45,7 @@ export const countries: Country[] = [
     currency: "DZD",
     languages: ["Arabic", "Tamazight"],
     tld: ".dz",
+    recognized: true,
   },
   {
     name: "Andorra",
@@ -56,6 +59,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Catalan"],
     tld: ".ad",
+    recognized: true,
   },
   {
     name: "Angola",
@@ -69,6 +73,7 @@ export const countries: Country[] = [
     currency: "AOA",
     languages: ["Portuguese"],
     tld: ".ao",
+    recognized: true,
   },
   {
     name: "Antigua and Barbuda",
@@ -82,6 +87,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".ag",
+    recognized: true,
   },
   {
     name: "Argentina",
@@ -95,6 +101,7 @@ export const countries: Country[] = [
     currency: "ARS",
     languages: ["Spanish"],
     tld: ".ar",
+    recognized: true,
   },
   {
     name: "Armenia",
@@ -108,6 +115,7 @@ export const countries: Country[] = [
     currency: "AMD",
     languages: ["Armenian"],
     tld: ".am",
+    recognized: true,
   },
   {
     name: "Australia",
@@ -121,6 +129,7 @@ export const countries: Country[] = [
     currency: "AUD",
     languages: ["English"],
     tld: ".au",
+    recognized: true,
   },
   {
     name: "Austria",
@@ -134,6 +143,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["German"],
     tld: ".at",
+    recognized: true,
   },
   {
     name: "Azerbaijan",
@@ -147,6 +157,7 @@ export const countries: Country[] = [
     currency: "AZN",
     languages: ["Azerbaijani"],
     tld: ".az",
+    recognized: true,
   },
   {
     name: "Bahamas",
@@ -160,6 +171,7 @@ export const countries: Country[] = [
     currency: "BSD",
     languages: ["English"],
     tld: ".bs",
+    recognized: true,
   },
   {
     name: "Bahrain",
@@ -173,6 +185,7 @@ export const countries: Country[] = [
     currency: "BHD",
     languages: ["Arabic"],
     tld: ".bh",
+    recognized: true,
   },
   {
     name: "Bangladesh",
@@ -186,6 +199,7 @@ export const countries: Country[] = [
     currency: "BDT",
     languages: ["Bengali"],
     tld: ".bd",
+    recognized: true,
   },
   {
     name: "Barbados",
@@ -199,6 +213,7 @@ export const countries: Country[] = [
     currency: "BBD",
     languages: ["English"],
     tld: ".bb",
+    recognized: true,
   },
   {
     name: "Belarus",
@@ -212,6 +227,7 @@ export const countries: Country[] = [
     currency: "BYN",
     languages: ["Belarusian", "Russian"],
     tld: ".by",
+    recognized: true,
   },
   {
     name: "Belgium",
@@ -225,6 +241,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Dutch", "French", "German"],
     tld: ".be",
+    recognized: true,
   },
   {
     name: "Belize",
@@ -238,6 +255,7 @@ export const countries: Country[] = [
     currency: "BZD",
     languages: ["English"],
     tld: ".bz",
+    recognized: true,
   },
   {
     name: "Benin",
@@ -251,6 +269,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".bj",
+    recognized: true,
   },
   {
     name: "Bhutan",
@@ -264,6 +283,7 @@ export const countries: Country[] = [
     currency: "BTN",
     languages: ["Dzongkha"],
     tld: ".bt",
+    recognized: true,
   },
   {
     name: "Bolivia",
@@ -277,6 +297,7 @@ export const countries: Country[] = [
     currency: "BOB",
     languages: ["Spanish", "Quechua", "Aymara"],
     tld: ".bo",
+    recognized: true,
   },
   {
     name: "Bosnia and Herzegovina",
@@ -290,6 +311,7 @@ export const countries: Country[] = [
     currency: "BAM",
     languages: ["Bosnian", "Serbian", "Croatian"],
     tld: ".ba",
+    recognized: true,
   },
   {
     name: "Botswana",
@@ -303,6 +325,7 @@ export const countries: Country[] = [
     currency: "BWP",
     languages: ["English", "Tswana"],
     tld: ".bw",
+    recognized: true,
   },
   {
     name: "Brazil",
@@ -316,6 +339,7 @@ export const countries: Country[] = [
     currency: "BRL",
     languages: ["Portuguese"],
     tld: ".br",
+    recognized: true,
   },
   {
     name: "Brunei",
@@ -329,6 +353,7 @@ export const countries: Country[] = [
     currency: "BND",
     languages: ["Malay", "English"],
     tld: ".bn",
+    recognized: true,
   },
   {
     name: "Bulgaria",
@@ -342,6 +367,7 @@ export const countries: Country[] = [
     currency: "BGN",
     languages: ["Bulgarian"],
     tld: ".bg",
+    recognized: true,
   },
   {
     name: "Burkina Faso",
@@ -355,6 +381,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".bf",
+    recognized: true,
   },
   {
     name: "Burundi",
@@ -368,6 +395,7 @@ export const countries: Country[] = [
     currency: "BIF",
     languages: ["Kirundi", "French"],
     tld: ".bi",
+    recognized: true,
   },
   {
     name: "Cabo Verde",
@@ -381,6 +409,7 @@ export const countries: Country[] = [
     currency: "CVE",
     languages: ["Portuguese"],
     tld: ".cv",
+    recognized: true,
   },
   {
     name: "Cambodia",
@@ -394,6 +423,7 @@ export const countries: Country[] = [
     currency: "KHR",
     languages: ["Khmer"],
     tld: ".kh",
+    recognized: true,
   },
   {
     name: "Cameroon",
@@ -407,6 +437,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["French", "English"],
     tld: ".cm",
+    recognized: true,
   },
   {
     name: "Canada",
@@ -420,6 +451,7 @@ export const countries: Country[] = [
     currency: "CAD",
     languages: ["English", "French"],
     tld: ".ca",
+    recognized: true,
   },
   {
     name: "Central African Republic",
@@ -433,6 +465,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["French", "Sango"],
     tld: ".cf",
+    recognized: true,
   },
   {
     name: "Chad",
@@ -446,6 +479,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["French", "Arabic"],
     tld: ".td",
+    recognized: true,
   },
   {
     name: "Chile",
@@ -459,6 +493,7 @@ export const countries: Country[] = [
     currency: "CLP",
     languages: ["Spanish"],
     tld: ".cl",
+    recognized: true,
   },
   {
     name: "China",
@@ -472,6 +507,7 @@ export const countries: Country[] = [
     currency: "CNY",
     languages: ["Mandarin"],
     tld: ".cn",
+    recognized: true,
   },
   {
     name: "Colombia",
@@ -485,6 +521,7 @@ export const countries: Country[] = [
     currency: "COP",
     languages: ["Spanish"],
     tld: ".co",
+    recognized: true,
   },
   {
     name: "Comoros",
@@ -498,6 +535,7 @@ export const countries: Country[] = [
     currency: "KMF",
     languages: ["Comorian", "Arabic", "French"],
     tld: ".km",
+    recognized: true,
   },
   {
     name: "Congo (Democratic Republic)",
@@ -511,6 +549,7 @@ export const countries: Country[] = [
     currency: "CDF",
     languages: ["French"],
     tld: ".cd",
+    recognized: true,
   },
   {
     name: "Congo (Republic)",
@@ -524,6 +563,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["French"],
     tld: ".cg",
+    recognized: true,
   },
   {
     name: "Costa Rica",
@@ -537,6 +577,7 @@ export const countries: Country[] = [
     currency: "CRC",
     languages: ["Spanish"],
     tld: ".cr",
+    recognized: true,
   },
   {
     name: "Croatia",
@@ -550,6 +591,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Croatian"],
     tld: ".hr",
+    recognized: true,
   },
   {
     name: "Cuba",
@@ -563,6 +605,7 @@ export const countries: Country[] = [
     currency: "CUP",
     languages: ["Spanish"],
     tld: ".cu",
+    recognized: true,
   },
   {
     name: "Cyprus",
@@ -576,6 +619,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Greek", "Turkish"],
     tld: ".cy",
+    recognized: true,
   },
   {
     name: "Czech Republic",
@@ -589,6 +633,7 @@ export const countries: Country[] = [
     currency: "CZK",
     languages: ["Czech"],
     tld: ".cz",
+    recognized: true,
   },
   {
     name: "Denmark",
@@ -602,6 +647,7 @@ export const countries: Country[] = [
     currency: "DKK",
     languages: ["Danish"],
     tld: ".dk",
+    recognized: true,
   },
   {
     name: "Djibouti",
@@ -615,6 +661,7 @@ export const countries: Country[] = [
     currency: "DJF",
     languages: ["French", "Arabic"],
     tld: ".dj",
+    recognized: true,
   },
   {
     name: "Dominica",
@@ -628,6 +675,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".dm",
+    recognized: true,
   },
   {
     name: "Dominican Republic",
@@ -641,6 +689,7 @@ export const countries: Country[] = [
     currency: "DOP",
     languages: ["Spanish"],
     tld: ".do",
+    recognized: true,
   },
   {
     name: "Ecuador",
@@ -654,6 +703,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["Spanish"],
     tld: ".ec",
+    recognized: true,
   },
   {
     name: "Egypt",
@@ -667,6 +717,7 @@ export const countries: Country[] = [
     currency: "EGP",
     languages: ["Arabic"],
     tld: ".eg",
+    recognized: true,
   },
   {
     name: "El Salvador",
@@ -680,6 +731,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["Spanish"],
     tld: ".sv",
+    recognized: true,
   },
   {
     name: "Equatorial Guinea",
@@ -693,6 +745,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["Spanish", "French", "Portuguese"],
     tld: ".gq",
+    recognized: true,
   },
   {
     name: "Eritrea",
@@ -706,6 +759,7 @@ export const countries: Country[] = [
     currency: "ERN",
     languages: ["Tigrinya", "Arabic", "English"],
     tld: ".er",
+    recognized: true,
   },
   {
     name: "Estonia",
@@ -719,6 +773,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Estonian"],
     tld: ".ee",
+    recognized: true,
   },
   {
     name: "Eswatini",
@@ -732,6 +787,7 @@ export const countries: Country[] = [
     currency: "SZL",
     languages: ["English", "Swati"],
     tld: ".sz",
+    recognized: true,
   },
   {
     name: "Ethiopia",
@@ -745,6 +801,7 @@ export const countries: Country[] = [
     currency: "ETB",
     languages: ["Amharic"],
     tld: ".et",
+    recognized: true,
   },
   {
     name: "Fiji",
@@ -758,6 +815,7 @@ export const countries: Country[] = [
     currency: "FJD",
     languages: ["English", "Fijian", "Hindi"],
     tld: ".fj",
+    recognized: true,
   },
   {
     name: "Finland",
@@ -771,6 +829,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Finnish", "Swedish"],
     tld: ".fi",
+    recognized: true,
   },
   {
     name: "France",
@@ -784,6 +843,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["French"],
     tld: ".fr",
+    recognized: true,
   },
   {
     name: "Gabon",
@@ -797,6 +857,7 @@ export const countries: Country[] = [
     currency: "XAF",
     languages: ["French"],
     tld: ".ga",
+    recognized: true,
   },
   {
     name: "Gambia",
@@ -810,6 +871,7 @@ export const countries: Country[] = [
     currency: "GMD",
     languages: ["English"],
     tld: ".gm",
+    recognized: true,
   },
   {
     name: "Georgia",
@@ -823,6 +885,7 @@ export const countries: Country[] = [
     currency: "GEL",
     languages: ["Georgian"],
     tld: ".ge",
+    recognized: true,
   },
   {
     name: "Germany",
@@ -836,6 +899,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["German"],
     tld: ".de",
+    recognized: true,
   },
   {
     name: "Ghana",
@@ -849,6 +913,7 @@ export const countries: Country[] = [
     currency: "GHS",
     languages: ["English"],
     tld: ".gh",
+    recognized: true,
   },
   {
     name: "Greece",
@@ -862,6 +927,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Greek"],
     tld: ".gr",
+    recognized: true,
   },
   {
     name: "Grenada",
@@ -875,6 +941,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".gd",
+    recognized: true,
   },
   {
     name: "Guatemala",
@@ -888,6 +955,7 @@ export const countries: Country[] = [
     currency: "GTQ",
     languages: ["Spanish"],
     tld: ".gt",
+    recognized: true,
   },
   {
     name: "Guinea",
@@ -901,6 +969,7 @@ export const countries: Country[] = [
     currency: "GNF",
     languages: ["French"],
     tld: ".gn",
+    recognized: true,
   },
   {
     name: "Guinea-Bissau",
@@ -914,6 +983,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["Portuguese"],
     tld: ".gw",
+    recognized: true,
   },
   {
     name: "Guyana",
@@ -927,6 +997,7 @@ export const countries: Country[] = [
     currency: "GYD",
     languages: ["English"],
     tld: ".gy",
+    recognized: true,
   },
   {
     name: "Haiti",
@@ -940,6 +1011,7 @@ export const countries: Country[] = [
     currency: "HTG",
     languages: ["French", "Haitian Creole"],
     tld: ".ht",
+    recognized: true,
   },
   {
     name: "Honduras",
@@ -953,6 +1025,7 @@ export const countries: Country[] = [
     currency: "HNL",
     languages: ["Spanish"],
     tld: ".hn",
+    recognized: true,
   },
   {
     name: "Hungary",
@@ -966,6 +1039,7 @@ export const countries: Country[] = [
     currency: "HUF",
     languages: ["Hungarian"],
     tld: ".hu",
+    recognized: true,
   },
   {
     name: "Iceland",
@@ -979,6 +1053,7 @@ export const countries: Country[] = [
     currency: "ISK",
     languages: ["Icelandic"],
     tld: ".is",
+    recognized: true,
   },
   {
     name: "India",
@@ -992,6 +1067,7 @@ export const countries: Country[] = [
     currency: "INR",
     languages: ["Hindi", "English"],
     tld: ".in",
+    recognized: true,
   },
   {
     name: "Indonesia",
@@ -1005,6 +1081,7 @@ export const countries: Country[] = [
     currency: "IDR",
     languages: ["Indonesian"],
     tld: ".id",
+    recognized: true,
   },
   {
     name: "Iran",
@@ -1018,6 +1095,7 @@ export const countries: Country[] = [
     currency: "IRR",
     languages: ["Persian"],
     tld: ".ir",
+    recognized: true,
   },
   {
     name: "Iraq",
@@ -1031,6 +1109,7 @@ export const countries: Country[] = [
     currency: "IQD",
     languages: ["Arabic", "Kurdish"],
     tld: ".iq",
+    recognized: true,
   },
   {
     name: "Ireland",
@@ -1044,6 +1123,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Irish", "English"],
     tld: ".ie",
+    recognized: true,
   },
   {
     name: "Israel",
@@ -1057,6 +1137,7 @@ export const countries: Country[] = [
     currency: "ILS",
     languages: ["Hebrew", "Arabic"],
     tld: ".il",
+    recognized: true,
   },
   {
     name: "Italy",
@@ -1070,6 +1151,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Italian"],
     tld: ".it",
+    recognized: true,
   },
   {
     name: "Jamaica",
@@ -1083,6 +1165,7 @@ export const countries: Country[] = [
     currency: "JMD",
     languages: ["English"],
     tld: ".jm",
+    recognized: true,
   },
   {
     name: "Japan",
@@ -1096,6 +1179,7 @@ export const countries: Country[] = [
     currency: "JPY",
     languages: ["Japanese"],
     tld: ".jp",
+    recognized: true,
   },
   {
     name: "Jordan",
@@ -1109,6 +1193,7 @@ export const countries: Country[] = [
     currency: "JOD",
     languages: ["Arabic"],
     tld: ".jo",
+    recognized: true,
   },
   {
     name: "Kazakhstan",
@@ -1122,6 +1207,7 @@ export const countries: Country[] = [
     currency: "KZT",
     languages: ["Kazakh", "Russian"],
     tld: ".kz",
+    recognized: true,
   },
   {
     name: "Kenya",
@@ -1135,6 +1221,7 @@ export const countries: Country[] = [
     currency: "KES",
     languages: ["Swahili", "English"],
     tld: ".ke",
+    recognized: true,
   },
   {
     name: "Kiribati",
@@ -1148,6 +1235,7 @@ export const countries: Country[] = [
     currency: "AUD",
     languages: ["English", "Gilbertese"],
     tld: ".ki",
+    recognized: true,
   },
   {
     name: "Kosovo",
@@ -1161,6 +1249,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Albanian", "Serbian"],
     tld: ".xk",
+    recognized: false,
   },
   {
     name: "Kuwait",
@@ -1174,6 +1263,7 @@ export const countries: Country[] = [
     currency: "KWD",
     languages: ["Arabic"],
     tld: ".kw",
+    recognized: true,
   },
   {
     name: "Kyrgyzstan",
@@ -1187,6 +1277,7 @@ export const countries: Country[] = [
     currency: "KGS",
     languages: ["Kyrgyz", "Russian"],
     tld: ".kg",
+    recognized: true,
   },
   {
     name: "Laos",
@@ -1200,6 +1291,7 @@ export const countries: Country[] = [
     currency: "LAK",
     languages: ["Lao"],
     tld: ".la",
+    recognized: true,
   },
   {
     name: "Latvia",
@@ -1213,6 +1305,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Latvian"],
     tld: ".lv",
+    recognized: true,
   },
   {
     name: "Lebanon",
@@ -1226,6 +1319,7 @@ export const countries: Country[] = [
     currency: "LBP",
     languages: ["Arabic", "French"],
     tld: ".lb",
+    recognized: true,
   },
   {
     name: "Lesotho",
@@ -1239,6 +1333,7 @@ export const countries: Country[] = [
     currency: "LSL",
     languages: ["Sesotho", "English"],
     tld: ".ls",
+    recognized: true,
   },
   {
     name: "Liberia",
@@ -1252,6 +1347,7 @@ export const countries: Country[] = [
     currency: "LRD",
     languages: ["English"],
     tld: ".lr",
+    recognized: true,
   },
   {
     name: "Libya",
@@ -1265,6 +1361,7 @@ export const countries: Country[] = [
     currency: "LYD",
     languages: ["Arabic"],
     tld: ".ly",
+    recognized: true,
   },
   {
     name: "Liechtenstein",
@@ -1278,6 +1375,7 @@ export const countries: Country[] = [
     currency: "CHF",
     languages: ["German"],
     tld: ".li",
+    recognized: true,
   },
   {
     name: "Lithuania",
@@ -1291,6 +1389,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Lithuanian"],
     tld: ".lt",
+    recognized: true,
   },
   {
     name: "Luxembourg",
@@ -1304,6 +1403,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Luxembourgish", "French", "German"],
     tld: ".lu",
+    recognized: true,
   },
   {
     name: "Madagascar",
@@ -1317,6 +1417,7 @@ export const countries: Country[] = [
     currency: "MGA",
     languages: ["Malagasy", "French"],
     tld: ".mg",
+    recognized: true,
   },
   {
     name: "Malawi",
@@ -1330,6 +1431,7 @@ export const countries: Country[] = [
     currency: "MWK",
     languages: ["English", "Chichewa"],
     tld: ".mw",
+    recognized: true,
   },
   {
     name: "Malaysia",
@@ -1343,6 +1445,7 @@ export const countries: Country[] = [
     currency: "MYR",
     languages: ["Malay"],
     tld: ".my",
+    recognized: true,
   },
   {
     name: "Maldives",
@@ -1356,6 +1459,7 @@ export const countries: Country[] = [
     currency: "MVR",
     languages: ["Dhivehi"],
     tld: ".mv",
+    recognized: true,
   },
   {
     name: "Mali",
@@ -1369,6 +1473,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".ml",
+    recognized: true,
   },
   {
     name: "Malta",
@@ -1382,6 +1487,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Maltese", "English"],
     tld: ".mt",
+    recognized: true,
   },
   {
     name: "Marshall Islands",
@@ -1395,6 +1501,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["Marshallese", "English"],
     tld: ".mh",
+    recognized: true,
   },
   {
     name: "Mauritania",
@@ -1408,6 +1515,7 @@ export const countries: Country[] = [
     currency: "MRU",
     languages: ["Arabic"],
     tld: ".mr",
+    recognized: true,
   },
   {
     name: "Mauritius",
@@ -1421,6 +1529,7 @@ export const countries: Country[] = [
     currency: "MUR",
     languages: ["English", "French"],
     tld: ".mu",
+    recognized: true,
   },
   {
     name: "Mexico",
@@ -1434,6 +1543,7 @@ export const countries: Country[] = [
     currency: "MXN",
     languages: ["Spanish"],
     tld: ".mx",
+    recognized: true,
   },
   {
     name: "Micronesia",
@@ -1447,6 +1557,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["English"],
     tld: ".fm",
+    recognized: true,
   },
   {
     name: "Moldova",
@@ -1460,6 +1571,7 @@ export const countries: Country[] = [
     currency: "MDL",
     languages: ["Romanian"],
     tld: ".md",
+    recognized: true,
   },
   {
     name: "Monaco",
@@ -1473,6 +1585,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["French"],
     tld: ".mc",
+    recognized: true,
   },
   {
     name: "Mongolia",
@@ -1486,6 +1599,7 @@ export const countries: Country[] = [
     currency: "MNT",
     languages: ["Mongolian"],
     tld: ".mn",
+    recognized: true,
   },
   {
     name: "Montenegro",
@@ -1499,6 +1613,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Montenegrin"],
     tld: ".me",
+    recognized: true,
   },
   {
     name: "Morocco",
@@ -1512,6 +1627,7 @@ export const countries: Country[] = [
     currency: "MAD",
     languages: ["Arabic", "Tamazight"],
     tld: ".ma",
+    recognized: true,
   },
   {
     name: "Mozambique",
@@ -1525,6 +1641,7 @@ export const countries: Country[] = [
     currency: "MZN",
     languages: ["Portuguese"],
     tld: ".mz",
+    recognized: true,
   },
   {
     name: "Myanmar",
@@ -1538,6 +1655,7 @@ export const countries: Country[] = [
     currency: "MMK",
     languages: ["Burmese"],
     tld: ".mm",
+    recognized: true,
   },
   {
     name: "Nagorno-Karabakh",
@@ -1550,6 +1668,7 @@ export const countries: Country[] = [
     continent: "Asia",
     currency: "AMD",
     languages: ["Armenian"],
+    recognized: false,
   },
   {
     name: "Namibia",
@@ -1563,6 +1682,7 @@ export const countries: Country[] = [
     currency: "NAD",
     languages: ["English"],
     tld: ".na",
+    recognized: true,
   },
   {
     name: "Nauru",
@@ -1576,6 +1696,7 @@ export const countries: Country[] = [
     currency: "AUD",
     languages: ["Nauruan", "English"],
     tld: ".nr",
+    recognized: true,
   },
   {
     name: "Nepal",
@@ -1589,6 +1710,7 @@ export const countries: Country[] = [
     currency: "NPR",
     languages: ["Nepali"],
     tld: ".np",
+    recognized: true,
   },
   {
     name: "Netherlands",
@@ -1602,6 +1724,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Dutch"],
     tld: ".nl",
+    recognized: true,
   },
   {
     name: "New Zealand",
@@ -1615,6 +1738,7 @@ export const countries: Country[] = [
     currency: "NZD",
     languages: ["English", "Māori"],
     tld: ".nz",
+    recognized: true,
   },
   {
     name: "Nicaragua",
@@ -1628,6 +1752,7 @@ export const countries: Country[] = [
     currency: "NIO",
     languages: ["Spanish"],
     tld: ".ni",
+    recognized: true,
   },
   {
     name: "Niger",
@@ -1641,6 +1766,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".ne",
+    recognized: true,
   },
   {
     name: "Nigeria",
@@ -1654,6 +1780,7 @@ export const countries: Country[] = [
     currency: "NGN",
     languages: ["English"],
     tld: ".ng",
+    recognized: true,
   },
   {
     name: "North Korea",
@@ -1667,6 +1794,7 @@ export const countries: Country[] = [
     currency: "KPW",
     languages: ["Korean"],
     tld: ".kp",
+    recognized: true,
   },
   {
     name: "North Macedonia",
@@ -1680,6 +1808,7 @@ export const countries: Country[] = [
     currency: "MKD",
     languages: ["Macedonian", "Albanian"],
     tld: ".mk",
+    recognized: true,
   },
   {
     name: "Norway",
@@ -1693,6 +1822,7 @@ export const countries: Country[] = [
     currency: "NOK",
     languages: ["Norwegian"],
     tld: ".no",
+    recognized: true,
   },
   {
     name: "Oman",
@@ -1706,6 +1836,7 @@ export const countries: Country[] = [
     currency: "OMR",
     languages: ["Arabic"],
     tld: ".om",
+    recognized: true,
   },
   {
     name: "Pakistan",
@@ -1719,6 +1850,7 @@ export const countries: Country[] = [
     currency: "PKR",
     languages: ["Urdu", "English"],
     tld: ".pk",
+    recognized: true,
   },
   {
     name: "Palau",
@@ -1732,6 +1864,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["Palauan", "English"],
     tld: ".pw",
+    recognized: true,
   },
   {
     name: "Palestine",
@@ -1745,6 +1878,7 @@ export const countries: Country[] = [
     currency: "ILS",
     languages: ["Arabic"],
     tld: ".ps",
+    recognized: true,
   },
   {
     name: "Panama",
@@ -1758,6 +1892,7 @@ export const countries: Country[] = [
     currency: "PAB",
     languages: ["Spanish"],
     tld: ".pa",
+    recognized: true,
   },
   {
     name: "Papua New Guinea",
@@ -1771,6 +1906,7 @@ export const countries: Country[] = [
     currency: "PGK",
     languages: ["English", "Tok Pisin"],
     tld: ".pg",
+    recognized: true,
   },
   {
     name: "Paraguay",
@@ -1784,6 +1920,7 @@ export const countries: Country[] = [
     currency: "PYG",
     languages: ["Spanish", "Guaraní"],
     tld: ".py",
+    recognized: true,
   },
   {
     name: "Peru",
@@ -1797,6 +1934,7 @@ export const countries: Country[] = [
     currency: "PEN",
     languages: ["Spanish", "Quechua", "Aymara"],
     tld: ".pe",
+    recognized: true,
   },
   {
     name: "Philippines",
@@ -1810,6 +1948,7 @@ export const countries: Country[] = [
     currency: "PHP",
     languages: ["Filipino", "English"],
     tld: ".ph",
+    recognized: true,
   },
   {
     name: "Poland",
@@ -1823,6 +1962,7 @@ export const countries: Country[] = [
     currency: "PLN",
     languages: ["Polish"],
     tld: ".pl",
+    recognized: true,
   },
   {
     name: "Portugal",
@@ -1836,6 +1976,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Portuguese"],
     tld: ".pt",
+    recognized: true,
   },
   {
     name: "Qatar",
@@ -1849,6 +1990,7 @@ export const countries: Country[] = [
     currency: "QAR",
     languages: ["Arabic"],
     tld: ".qa",
+    recognized: true,
   },
   {
     name: "Romania",
@@ -1862,6 +2004,7 @@ export const countries: Country[] = [
     currency: "RON",
     languages: ["Romanian"],
     tld: ".ro",
+    recognized: true,
   },
   {
     name: "Russia",
@@ -1875,6 +2018,7 @@ export const countries: Country[] = [
     currency: "RUB",
     languages: ["Russian"],
     tld: ".ru",
+    recognized: true,
   },
   {
     name: "Rwanda",
@@ -1888,6 +2032,7 @@ export const countries: Country[] = [
     currency: "RWF",
     languages: ["Kinyarwanda", "French", "English"],
     tld: ".rw",
+    recognized: true,
   },
   {
     name: "Saint Kitts and Nevis",
@@ -1901,6 +2046,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".kn",
+    recognized: true,
   },
   {
     name: "Saint Lucia",
@@ -1914,6 +2060,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".lc",
+    recognized: true,
   },
   {
     name: "Saint Vincent and the Grenadines",
@@ -1927,6 +2074,7 @@ export const countries: Country[] = [
     currency: "XCD",
     languages: ["English"],
     tld: ".vc",
+    recognized: true,
   },
   {
     name: "Samoa",
@@ -1940,6 +2088,7 @@ export const countries: Country[] = [
     currency: "WST",
     languages: ["Samoan", "English"],
     tld: ".ws",
+    recognized: true,
   },
   {
     name: "San Marino",
@@ -1953,6 +2102,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Italian"],
     tld: ".sm",
+    recognized: true,
   },
   {
     name: "São Tomé and Príncipe",
@@ -1966,6 +2116,7 @@ export const countries: Country[] = [
     currency: "STN",
     languages: ["Portuguese"],
     tld: ".st",
+    recognized: true,
   },
   {
     name: "Saudi Arabia",
@@ -1979,6 +2130,7 @@ export const countries: Country[] = [
     currency: "SAR",
     languages: ["Arabic"],
     tld: ".sa",
+    recognized: true,
   },
   {
     name: "Senegal",
@@ -1992,6 +2144,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".sn",
+    recognized: true,
   },
   {
     name: "Serbia",
@@ -2005,6 +2158,7 @@ export const countries: Country[] = [
     currency: "RSD",
     languages: ["Serbian"],
     tld: ".rs",
+    recognized: true,
   },
   {
     name: "Seychelles",
@@ -2018,6 +2172,7 @@ export const countries: Country[] = [
     currency: "SCR",
     languages: ["Seychellois Creole", "English", "French"],
     tld: ".sc",
+    recognized: true,
   },
   {
     name: "Sierra Leone",
@@ -2031,6 +2186,7 @@ export const countries: Country[] = [
     currency: "SLL",
     languages: ["English"],
     tld: ".sl",
+    recognized: true,
   },
   {
     name: "Singapore",
@@ -2044,6 +2200,7 @@ export const countries: Country[] = [
     currency: "SGD",
     languages: ["English", "Malay", "Mandarin", "Tamil"],
     tld: ".sg",
+    recognized: true,
   },
   {
     name: "Slovakia",
@@ -2057,6 +2214,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Slovak"],
     tld: ".sk",
+    recognized: true,
   },
   {
     name: "Slovenia",
@@ -2070,6 +2228,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Slovenian"],
     tld: ".si",
+    recognized: true,
   },
   {
     name: "Solomon Islands",
@@ -2083,6 +2242,7 @@ export const countries: Country[] = [
     currency: "SBD",
     languages: ["English"],
     tld: ".sb",
+    recognized: true,
   },
   {
     name: "Somalia",
@@ -2096,6 +2256,7 @@ export const countries: Country[] = [
     currency: "SOS",
     languages: ["Somali", "Arabic"],
     tld: ".so",
+    recognized: true,
   },
   {
     name: "South Africa",
@@ -2109,6 +2270,7 @@ export const countries: Country[] = [
     currency: "ZAR",
     languages: ["Zulu", "Xhosa", "Afrikaans", "English"],
     tld: ".za",
+    recognized: true,
   },
   {
     name: "South Korea",
@@ -2122,6 +2284,7 @@ export const countries: Country[] = [
     currency: "KRW",
     languages: ["Korean"],
     tld: ".kr",
+    recognized: true,
   },
   {
     name: "South Sudan",
@@ -2135,6 +2298,7 @@ export const countries: Country[] = [
     currency: "SSP",
     languages: ["English"],
     tld: ".ss",
+    recognized: true,
   },
   {
     name: "Spain",
@@ -2148,6 +2312,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Spanish"],
     tld: ".es",
+    recognized: true,
   },
   {
     name: "Sri Lanka",
@@ -2161,6 +2326,7 @@ export const countries: Country[] = [
     currency: "LKR",
     languages: ["Sinhala", "Tamil"],
     tld: ".lk",
+    recognized: true,
   },
   {
     name: "Sudan",
@@ -2174,6 +2340,7 @@ export const countries: Country[] = [
     currency: "SDG",
     languages: ["Arabic", "English"],
     tld: ".sd",
+    recognized: true,
   },
   {
     name: "Suriname",
@@ -2187,6 +2354,7 @@ export const countries: Country[] = [
     currency: "SRD",
     languages: ["Dutch"],
     tld: ".sr",
+    recognized: true,
   },
   {
     name: "Sweden",
@@ -2200,6 +2368,7 @@ export const countries: Country[] = [
     currency: "SEK",
     languages: ["Swedish"],
     tld: ".se",
+    recognized: true,
   },
   {
     name: "Switzerland",
@@ -2213,6 +2382,7 @@ export const countries: Country[] = [
     currency: "CHF",
     languages: ["German", "French", "Italian", "Romansh"],
     tld: ".ch",
+    recognized: true,
   },
   {
     name: "Syria",
@@ -2226,6 +2396,7 @@ export const countries: Country[] = [
     currency: "SYP",
     languages: ["Arabic"],
     tld: ".sy",
+    recognized: true,
   },
   {
     name: "Taiwan",
@@ -2239,6 +2410,7 @@ export const countries: Country[] = [
     currency: "TWD",
     languages: ["Mandarin"],
     tld: ".tw",
+    recognized: true,
   },
   {
     name: "Tajikistan",
@@ -2252,6 +2424,7 @@ export const countries: Country[] = [
     currency: "TJS",
     languages: ["Tajik"],
     tld: ".tj",
+    recognized: true,
   },
   {
     name: "Tanzania",
@@ -2265,6 +2438,7 @@ export const countries: Country[] = [
     currency: "TZS",
     languages: ["Swahili", "English"],
     tld: ".tz",
+    recognized: true,
   },
   {
     name: "Thailand",
@@ -2278,6 +2452,7 @@ export const countries: Country[] = [
     currency: "THB",
     languages: ["Thai"],
     tld: ".th",
+    recognized: true,
   },
   {
     name: "Timor-Leste",
@@ -2291,6 +2466,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["Portuguese", "Tetum"],
     tld: ".tl",
+    recognized: true,
   },
   {
     name: "Togo",
@@ -2304,6 +2480,7 @@ export const countries: Country[] = [
     currency: "XOF",
     languages: ["French"],
     tld: ".tg",
+    recognized: true,
   },
   {
     name: "Tonga",
@@ -2317,6 +2494,7 @@ export const countries: Country[] = [
     currency: "TOP",
     languages: ["Tongan", "English"],
     tld: ".to",
+    recognized: true,
   },
   {
     name: "Trinidad and Tobago",
@@ -2330,6 +2508,7 @@ export const countries: Country[] = [
     currency: "TTD",
     languages: ["English"],
     tld: ".tt",
+    recognized: true,
   },
   {
     name: "Tunisia",
@@ -2343,6 +2522,7 @@ export const countries: Country[] = [
     currency: "TND",
     languages: ["Arabic"],
     tld: ".tn",
+    recognized: true,
   },
   {
     name: "Turkey",
@@ -2356,6 +2536,7 @@ export const countries: Country[] = [
     currency: "TRY",
     languages: ["Turkish"],
     tld: ".tr",
+    recognized: true,
   },
   {
     name: "Turkmenistan",
@@ -2369,6 +2550,7 @@ export const countries: Country[] = [
     currency: "TMT",
     languages: ["Turkmen"],
     tld: ".tm",
+    recognized: true,
   },
   {
     name: "Tuvalu",
@@ -2382,6 +2564,7 @@ export const countries: Country[] = [
     currency: "AUD",
     languages: ["Tuvaluan", "English"],
     tld: ".tv",
+    recognized: true,
   },
   {
     name: "Uganda",
@@ -2395,6 +2578,7 @@ export const countries: Country[] = [
     currency: "UGX",
     languages: ["English", "Swahili"],
     tld: ".ug",
+    recognized: true,
   },
   {
     name: "Ukraine",
@@ -2408,6 +2592,7 @@ export const countries: Country[] = [
     currency: "UAH",
     languages: ["Ukrainian"],
     tld: ".ua",
+    recognized: true,
   },
   {
     name: "United Arab Emirates",
@@ -2421,6 +2606,7 @@ export const countries: Country[] = [
     currency: "AED",
     languages: ["Arabic"],
     tld: ".ae",
+    recognized: true,
   },
   {
     name: "United Kingdom",
@@ -2434,6 +2620,7 @@ export const countries: Country[] = [
     currency: "GBP",
     languages: ["English"],
     tld: ".uk",
+    recognized: true,
   },
   {
     name: "United States",
@@ -2447,6 +2634,7 @@ export const countries: Country[] = [
     currency: "USD",
     languages: ["English"],
     tld: ".us",
+    recognized: true,
   },
   {
     name: "Uruguay",
@@ -2460,6 +2648,7 @@ export const countries: Country[] = [
     currency: "UYU",
     languages: ["Spanish"],
     tld: ".uy",
+    recognized: true,
   },
   {
     name: "Uzbekistan",
@@ -2473,6 +2662,7 @@ export const countries: Country[] = [
     currency: "UZS",
     languages: ["Uzbek"],
     tld: ".uz",
+    recognized: true,
   },
   {
     name: "Vanuatu",
@@ -2486,6 +2676,7 @@ export const countries: Country[] = [
     currency: "VUV",
     languages: ["Bislama", "English", "French"],
     tld: ".vu",
+    recognized: true,
   },
   {
     name: "Vatican City",
@@ -2499,6 +2690,7 @@ export const countries: Country[] = [
     currency: "EUR",
     languages: ["Italian", "Latin"],
     tld: ".va",
+    recognized: true,
   },
   {
     name: "Venezuela",
@@ -2512,6 +2704,7 @@ export const countries: Country[] = [
     currency: "VES",
     languages: ["Spanish"],
     tld: ".ve",
+    recognized: true,
   },
   {
     name: "Vietnam",
@@ -2525,6 +2718,7 @@ export const countries: Country[] = [
     currency: "VND",
     languages: ["Vietnamese"],
     tld: ".vn",
+    recognized: true,
   },
   {
     name: "Yemen",
@@ -2538,6 +2732,7 @@ export const countries: Country[] = [
     currency: "YER",
     languages: ["Arabic"],
     tld: ".ye",
+    recognized: true,
   },
   {
     name: "Zambia",
@@ -2551,6 +2746,7 @@ export const countries: Country[] = [
     currency: "ZMW",
     languages: ["English"],
     tld: ".zm",
+    recognized: true,
   },
   {
     name: "Zimbabwe",
@@ -2564,6 +2760,7 @@ export const countries: Country[] = [
     currency: "ZWL",
     languages: ["English", "Shona", "Ndebele"],
     tld: ".zw",
+    recognized: true,
   },
 ];
 
@@ -2593,4 +2790,12 @@ export function getCountryFlag(alpha2: string): string {
   return [...alpha2.toUpperCase()]
     .map((char) => String.fromCodePoint(char.charCodeAt(0) + OFFSET))
     .join("");
+}
+
+/**
+ * Get all officially recognized sovereign countries.
+ * Excludes disputed or unrecognized territories.
+ */
+export function getRecognizedCountries(): Country[] {
+  return countries.filter((c) => c.recognized);
 }

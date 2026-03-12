@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { countries } from "../data/countries.js";
+import { countries, getRecognizedCountries } from "../data/countries.js";
 import type { Country } from "../types/index.js";
 
 describe("countries", () => {
@@ -22,14 +22,15 @@ describe("countries", () => {
       "phoneCode",
       "currency",
       "languages",
+      "recognized",
     ];
 
     for (const country of countries) {
       for (const field of requiredFields) {
         expect(
-          country[field],
+          country[field] !== undefined && country[field] !== null,
           `Country "${country.name}" is missing field "${field}"`
-        ).toBeTruthy();
+        ).toBe(true);
       }
     }
   });
@@ -97,6 +98,7 @@ describe("countries", () => {
     expect(us?.phoneCode).toBe("+1");
     expect(us?.currency).toBe("USD");
     expect(us?.flag).toBe("🇺🇸");
+    expect(us?.recognized).toBe(true);
   });
 
   it("should have correct data for Germany", () => {
@@ -109,6 +111,7 @@ describe("countries", () => {
     expect(de?.phoneCode).toBe("+49");
     expect(de?.currency).toBe("EUR");
     expect(de?.flag).toBe("🇩🇪");
+    expect(de?.recognized).toBe(true);
   });
 
   it("should have countries from all continents", () => {
@@ -138,5 +141,53 @@ describe("countries", () => {
         `Country "${country.name}" has no languages`
       ).toBeGreaterThan(0);
     }
+  });
+
+  it("should have recognized as a boolean for every country", () => {
+    for (const country of countries) {
+      expect(
+        typeof country.recognized,
+        `Country "${country.name}" has non-boolean recognized field`
+      ).toBe("boolean");
+    }
+  });
+
+  it("should mark most countries as recognized", () => {
+    const recognized = countries.filter((c) => c.recognized);
+    expect(recognized.length).toBeGreaterThan(150);
+  });
+
+  it("should mark Kosovo as not recognized", () => {
+    const xk = countries.find((c) => c.alpha2 === "XK");
+    expect(xk).toBeDefined();
+    expect(xk?.recognized).toBe(false);
+  });
+
+  it("should mark Nagorno-Karabakh as not recognized", () => {
+    const xn = countries.find((c) => c.alpha2 === "XN");
+    expect(xn).toBeDefined();
+    expect(xn?.recognized).toBe(false);
+  });
+
+  describe("getRecognizedCountries", () => {
+    it("should return only recognized countries", () => {
+      const recognized = getRecognizedCountries();
+      expect(recognized.every((c) => c.recognized)).toBe(true);
+    });
+
+    it("should not include Kosovo or Nagorno-Karabakh", () => {
+      const recognized = getRecognizedCountries();
+      const codes = recognized.map((c) => c.alpha2);
+      expect(codes).not.toContain("XK");
+      expect(codes).not.toContain("XN");
+    });
+
+    it("should include major recognized countries", () => {
+      const recognized = getRecognizedCountries();
+      const codes = recognized.map((c) => c.alpha2);
+      expect(codes).toContain("US");
+      expect(codes).toContain("DE");
+      expect(codes).toContain("JP");
+    });
   });
 });

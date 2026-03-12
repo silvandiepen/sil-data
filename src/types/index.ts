@@ -26,6 +26,12 @@ export interface Country {
   languages: string[];
   /** Top-level domain (e.g., ".us") */
   tld?: string;
+  /**
+   * Whether the country is officially recognized as a sovereign state.
+   * `false` for disputed or unrecognized territories (e.g., Kosovo, Nagorno-Karabakh)
+   * that use user-assigned ISO codes not endorsed by the UN.
+   */
+  recognized: boolean;
 }
 
 /**
