@@ -273,3 +273,33 @@ export interface WorldMapHighlight {
   /** Optional accessible label (written as a `<title>` element). */
   label?: string;
 }
+
+/**
+ * Styling and display options for rendering a single-country SVG map.
+ */
+export interface CountryMapOptions {
+  /** Fill color for the country shape. Default: "#d0d0d0" */
+  fill?: string;
+  /** Stroke (border) color for the country outline. Default: "#ffffff" */
+  stroke?: string;
+  /** Stroke width in SVG units. Default: 0.5 */
+  strokeWidth?: number;
+  /** SVG element width attribute (e.g. "100%", 800). Default: "100%" */
+  width?: string | number;
+  /** SVG element height attribute (e.g. "auto", 400). Default: "auto" */
+  height?: string | number;
+  /** Optional CSS class added to the `<svg>` element. */
+  className?: string;
+  /** Whether to show city marker dots. Default: true */
+  showCities?: boolean;
+  /** Fill color for regular city markers. Default: "#555555" */
+  cityColor?: string;
+  /** Fill color for the capital city marker. Default: "#cc2222" */
+  capitalColor?: string;
+  /** Radius of regular city markers in SVG units. Default: 3 */
+  cityRadius?: number;
+  /** Radius of the capital city marker in SVG units. Default: 5 */
+  capitalRadius?: number;
+  /** Extra space (in SVG units) added around the country outline. Default: 5 */
+  padding?: number;
+}
