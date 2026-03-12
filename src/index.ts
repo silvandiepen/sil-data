@@ -38,6 +38,7 @@ export type {
   ReligionBreakdown,
   EthnicGroup,
   CountryDemographics,
+  CountryMapOptions,
 } from "./types/index.js";
 
 // Countries
@@ -90,6 +91,7 @@ export {
   getLandlockedCountries,
   getCountriesByClimate,
   getNeighbors,
+  doCountriesBorder,
 } from "./data/geography.js";
 
 // Flag metadata (SVG URLs, colours, similar flags)
@@ -129,3 +131,11 @@ export {
   highlightCountries,
   colorizeWorldMap,
 } from "./data/worldMap.js";
+
+// Individual country SVG maps
+export {
+  COUNTRY_MAP_DEFAULTS,
+  latLonToMapPoint,
+  getCountrySvg,
+  getCountrySubdivisionMapUrl,
+} from "./data/countryMaps.js";
