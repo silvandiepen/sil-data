@@ -911,7 +911,7 @@ describe("worldMapCountries", () => {
 
 describe("WORLD_MAP_VIEWBOX", () => {
   it("should be the expected viewBox string", () => {
-    expect(WORLD_MAP_VIEWBOX).toBe("0 0 2000 857");
+    expect(WORLD_MAP_VIEWBOX).toBe("0 0 1009.6727 665.96301");
   });
 });
 
@@ -975,7 +975,7 @@ describe("getWorldMapSvg", () => {
 
   it("should include the viewBox attribute", () => {
     const svg = getWorldMapSvg();
-    expect(svg).toContain('viewBox="0 0 2000 857"');
+    expect(svg).toContain('viewBox="0 0 1009.6727 665.96301"');
   });
 
   it("should include country ids in path elements", () => {
