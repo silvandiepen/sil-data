@@ -86,6 +86,7 @@ export {
   getLandlockedCountries,
   getCountriesByClimate,
   getNeighbors,
+  doCountriesBorder,
 } from "./data/geography.js";
 
 // Flag metadata (SVG URLs, colours, similar flags)

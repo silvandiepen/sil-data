@@ -259,3 +259,26 @@ export function getNeighbors(alpha2: string): CountryGeography[] {
     .map((code) => getCountryGeography(code))
     .filter((g): g is CountryGeography => g !== undefined);
 }
+
+/**
+ * Check whether two countries share a land border.
+ *
+ * @param alpha2A - ISO 3166-1 alpha-2 code of the first country (case-insensitive).
+ * @param alpha2B - ISO 3166-1 alpha-2 code of the second country (case-insensitive).
+ * @returns `true` if the two countries are neighbours, `false` otherwise.
+ *   Also returns `false` if either code is not found in the geography data.
+ *
+ * @example
+ * ```ts
+ * doCountriesBorder("DE", "FR"); // true  – Germany and France share a border
+ * doCountriesBorder("DE", "US"); // false – no shared border
+ * ```
+ */
+export function doCountriesBorder(alpha2A: string, alpha2B: string): boolean {
+  const geoA = getCountryGeography(alpha2A);
+  if (!geoA) return false;
+  const geoB = getCountryGeography(alpha2B);
+  if (!geoB) return false;
+  const upper = geoB.alpha2.toUpperCase();
+  return geoA.neighbors.some((n) => n.toUpperCase() === upper);
+}
