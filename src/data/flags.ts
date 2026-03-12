@@ -42,7 +42,7 @@ export const flagData: FlagInfo[] = [
   { alpha2: "AO", svgUrl: "https://flagcdn.com/ao.svg", pngUrl: "https://flagcdn.com/w320/ao.png", colors: ["red", "black"], similar: ["AL", "GE"] },
   { alpha2: "AG", svgUrl: "https://flagcdn.com/ag.svg", pngUrl: "https://flagcdn.com/w320/ag.png", colors: ["red", "black", "gold", "white", "blue"], similar: ["BB", "JM"] },
   { alpha2: "AR", svgUrl: "https://flagcdn.com/ar.svg", pngUrl: "https://flagcdn.com/w320/ar.png", colors: ["light-blue", "white"], similar: ["HN", "NI", "SV"] },
-  { alpha2: "AM", svgUrl: "https://flagcdn.com/am.svg", pngUrl: "https://flagcdn.com/w320/am.png", colors: ["red", "blue", "orange"], similar: ["DE", "BE", "TD"] },
+  { alpha2: "AM", svgUrl: "https://flagcdn.com/am.svg", pngUrl: "https://flagcdn.com/w320/am.png", colors: ["red", "blue", "orange"], similar: ["DE", "BE", "TD", "XN"] },
   { alpha2: "AU", svgUrl: "https://flagcdn.com/au.svg", pngUrl: "https://flagcdn.com/w320/au.png", colors: ["blue", "red", "white"], similar: ["NZ", "GB", "FJ", "TV"] },
   { alpha2: "AT", svgUrl: "https://flagcdn.com/at.svg", pngUrl: "https://flagcdn.com/w320/at.png", colors: ["red", "white"], similar: ["LV", "SG", "PE", "PL"] },
   { alpha2: "AZ", svgUrl: "https://flagcdn.com/az.svg", pngUrl: "https://flagcdn.com/w320/az.png", colors: ["light-blue", "red", "green"], similar: ["TR", "TM", "UZ"] },
@@ -166,6 +166,7 @@ export const flagData: FlagInfo[] = [
   { alpha2: "MZ", svgUrl: "https://flagcdn.com/mz.svg", pngUrl: "https://flagcdn.com/w320/mz.png", colors: ["green", "white", "black", "yellow", "red"], similar: ["ZW", "AO", "ET"] },
   { alpha2: "MM", svgUrl: "https://flagcdn.com/mm.svg", pngUrl: "https://flagcdn.com/w320/mm.png", colors: ["yellow", "green", "red", "white"], similar: ["LT", "BO", "GH"] },
   // ── N ─────────────────────────────────────────────────────────────────
+  { alpha2: "XN", svgUrl: "https://flagcdn.com/xn.svg", pngUrl: "https://flagcdn.com/w320/xn.png", colors: ["red", "blue", "orange", "white"], similar: ["AM"] },
   { alpha2: "NA", svgUrl: "https://flagcdn.com/na.svg", pngUrl: "https://flagcdn.com/w320/na.png", colors: ["blue", "red", "green", "white", "gold"], similar: ["ZA", "BW", "ZW"] },
   { alpha2: "NR", svgUrl: "https://flagcdn.com/nr.svg", pngUrl: "https://flagcdn.com/w320/nr.png", colors: ["blue", "white", "gold"], similar: ["AU", "TV", "TO"] },
   { alpha2: "NP", svgUrl: "https://flagcdn.com/np.svg", pngUrl: "https://flagcdn.com/w320/np.png", colors: ["red", "white", "blue"], similar: [] },

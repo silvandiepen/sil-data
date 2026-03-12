@@ -615,6 +615,17 @@ describe("flagData", () => {
     expect(codes).toContain("FR");
   });
 
+  it("should include Nagorno-Karabakh (XN)", () => {
+    const xn = flagData.find((f) => f.alpha2 === "XN");
+    expect(xn).toBeDefined();
+    expect(xn?.svgUrl).toBe("https://flagcdn.com/xn.svg");
+    expect(xn?.pngUrl).toBe("https://flagcdn.com/w320/xn.png");
+    expect(xn?.colors).toContain("red");
+    expect(xn?.colors).toContain("blue");
+    expect(xn?.colors).toContain("orange");
+    expect(xn?.similar).toContain("AM");
+  });
+
   it("should have at least 150 entries", () => {
     expect(flagData.length).toBeGreaterThan(150);
   });

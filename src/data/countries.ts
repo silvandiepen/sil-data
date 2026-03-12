@@ -1540,6 +1540,18 @@ export const countries: Country[] = [
     tld: ".mm",
   },
   {
+    name: "Nagorno-Karabakh",
+    alpha2: "XN",
+    alpha3: "XNA",
+    numeric: "999",
+    flag: "🇽🇳",
+    phoneCode: "+374",
+    capital: "Stepanakert",
+    continent: "Asia",
+    currency: "AMD",
+    languages: ["Armenian"],
+  },
+  {
     name: "Namibia",
     alpha2: "NA",
     alpha3: "NAM",
