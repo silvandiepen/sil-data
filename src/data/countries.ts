@@ -1,4 +1,13 @@
 import type { Country } from "../types/index.js";
+import { translateCountry } from "./translations.js";
+import { getCurrencyByCode } from "./currencies.js";
+
+/** Enrich a (possibly already-translated) country with full currency name and symbol. */
+function withCurrencyInfo(country: Country, lang: string): Country {
+  const currencyData = getCurrencyByCode(country.currency, lang);
+  if (!currencyData) return country;
+  return { ...country, currencyName: currencyData.name, currencySymbol: currencyData.symbol };
+}
 
 /**
  * Complete list of world countries with ISO codes, flags, phone codes, and metadata.
@@ -2767,19 +2776,24 @@ export const countries: Country[] = [
 /**
  * Get a country by its ISO 3166-1 alpha-2 code.
  */
-export function getCountryByCode(code: string): Country | undefined {
-  return countries.find(
+export function getCountryByCode(code: string, lang = "en"): Country | undefined {
+  const country = countries.find(
     (c) => c.alpha2.toLowerCase() === code.toLowerCase()
   );
+  if (!country) return undefined;
+  return withCurrencyInfo(translateCountry(country, lang), lang);
 }
 
 /**
  * Get countries by continent.
  */
 export function getCountriesByContinent(
-  continent: Country["continent"]
+  continent: Country["continent"],
+  lang = "en"
 ): Country[] {
-  return countries.filter((c) => c.continent === continent);
+  return countries
+    .filter((c) => c.continent === continent)
+    .map((c) => withCurrencyInfo(translateCountry(c, lang), lang));
 }
 
 /**
@@ -2796,6 +2810,8 @@ export function getCountryFlag(alpha2: string): string {
  * Get all officially recognized sovereign countries.
  * Excludes disputed or unrecognized territories.
  */
-export function getRecognizedCountries(): Country[] {
-  return countries.filter((c) => c.recognized);
+export function getRecognizedCountries(lang = "en"): Country[] {
+  return countries
+    .filter((c) => c.recognized)
+    .map((c) => withCurrencyInfo(translateCountry(c, lang), lang));
 }

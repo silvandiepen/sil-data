@@ -1,4 +1,5 @@
 import type { Currency } from "../types/index.js";
+import { translateCurrency } from "./translations.js";
 
 /**
  * Major world currencies with ISO 4217 codes, symbols, and the countries that use them.
@@ -333,15 +334,19 @@ export const currencies: Currency[] = [
 /**
  * Get currency by its ISO 4217 code.
  */
-export function getCurrencyByCode(code: string): Currency | undefined {
-  return currencies.find((c) => c.code.toLowerCase() === code.toLowerCase());
+export function getCurrencyByCode(code: string, lang = "en"): Currency | undefined {
+  const currency = currencies.find((c) => c.code.toLowerCase() === code.toLowerCase());
+  if (!currency) return undefined;
+  return translateCurrency(currency, lang);
 }
 
 /**
  * Get the currency used by a specific country.
  */
-export function getCurrencyByCountry(countryCode: string): Currency | undefined {
-  return currencies.find((c) =>
+export function getCurrencyByCountry(countryCode: string, lang = "en"): Currency | undefined {
+  const currency = currencies.find((c) =>
     c.countries.some((cc) => cc.toLowerCase() === countryCode.toLowerCase())
   );
+  if (!currency) return undefined;
+  return translateCurrency(currency, lang);
 }

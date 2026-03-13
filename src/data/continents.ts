@@ -1,4 +1,5 @@
 import type { Continent } from "../types/index.js";
+import { translateContinent } from "./translations.js";
 
 /**
  * The seven continents with key metadata.
@@ -58,6 +59,8 @@ export const continents: Continent[] = [
 /**
  * Get a continent by its two-letter code.
  */
-export function getContinentByCode(code: string): Continent | undefined {
-  return continents.find((c) => c.code.toLowerCase() === code.toLowerCase());
+export function getContinentByCode(code: string, lang = "en"): Continent | undefined {
+  const continent = continents.find((c) => c.code.toLowerCase() === code.toLowerCase());
+  if (!continent) return undefined;
+  return translateContinent(continent, lang);
 }

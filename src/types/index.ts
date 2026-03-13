@@ -22,6 +22,10 @@ export interface Country {
   continent: ContinentName;
   /** ISO 4217 currency code (e.g., "USD") */
   currency: string;
+  /** Full currency name, optionally translated (e.g., "US Dollar", "US-Dollar") */
+  currencyName?: string;
+  /** Currency symbol (e.g., "$") */
+  currencySymbol?: string;
   /** Primary language(s) spoken */
   languages: string[];
   /** Top-level domain (e.g., ".us") */

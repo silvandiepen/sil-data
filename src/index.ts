@@ -41,6 +41,22 @@ export type {
   CountryMapOptions,
 } from "./types/index.js";
 
+// Translations
+export type {
+  CountryTranslation,
+  TranslationMap,
+  TranslationLanguage,
+} from "./data/translations.js";
+export {
+  translations,
+  getSupportedLanguages,
+  getTranslations,
+  translateCountry,
+  translateCity,
+  translateContinent,
+  translateCurrency,
+} from "./data/translations.js";
+
 // Countries
 export {
   countries,

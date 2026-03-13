@@ -1,4 +1,5 @@
 import type { City } from "../types/index.js";
+import { translateCity } from "./translations.js";
 
 /**
  * Major world cities with geographic and demographic data.
@@ -451,36 +452,41 @@ export const cities: City[] = [
 /**
  * Get cities for a specific country.
  */
-export function getCitiesByCountry(countryCode: string): City[] {
-  return cities.filter(
-    (c) => c.country.toLowerCase() === countryCode.toLowerCase()
-  );
+export function getCitiesByCountry(countryCode: string, lang = "en"): City[] {
+  return cities
+    .filter((c) => c.country.toLowerCase() === countryCode.toLowerCase())
+    .map((c) => translateCity(c, lang));
 }
 
 /**
  * Get the capital city of a country.
  */
-export function getCapitalCity(countryCode: string): City | undefined {
-  return cities.find(
+export function getCapitalCity(countryCode: string, lang = "en"): City | undefined {
+  const city = cities.find(
     (c) =>
       c.country.toLowerCase() === countryCode.toLowerCase() && c.capital === true
   );
+  if (!city) return undefined;
+  return translateCity(city, lang);
 }
 
 /**
  * Get cities sorted by population (largest first).
  */
-export function getCitiesByPopulation(limit?: number): City[] {
+export function getCitiesByPopulation(limit?: number, lang = "en"): City[] {
   const sorted = [...cities]
     .filter((c) => c.population !== undefined)
     .sort((a, b) => (b.population ?? 0) - (a.population ?? 0));
-  return limit ? sorted.slice(0, limit) : sorted;
+  const sliced = limit ? sorted.slice(0, limit) : sorted;
+  return sliced.map((c) => translateCity(c, lang));
 }
 
 /**
  * Search cities by name (case-insensitive partial match).
  */
-export function searchCities(query: string): City[] {
+export function searchCities(query: string, lang = "en"): City[] {
   const q = query.toLowerCase();
-  return cities.filter((c) => c.name.toLowerCase().includes(q));
+  return cities
+    .filter((c) => c.name.toLowerCase().includes(q))
+    .map((c) => translateCity(c, lang));
 }
